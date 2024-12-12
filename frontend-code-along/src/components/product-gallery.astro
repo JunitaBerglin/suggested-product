@@ -14,9 +14,9 @@ const productData = await getCollection('products')
 const products = productData.map(item => item.data)
 ---
 
-<section class="m-10 bg-slate-900 rounded-xl p-10">
+<section class=" bg-slate-900 rounded-xl">
     <h2 class="text-4xl text-white">{title}</h2>
-    <div class="flex">
+    <div class="flex flex-wrap gap-4">
      {products.map(product => <GalleryCard product={product}></GalleryCard>)}
     </div>
 </section>

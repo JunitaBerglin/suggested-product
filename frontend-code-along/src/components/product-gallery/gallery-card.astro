@@ -11,6 +11,21 @@ interface Props {
 const {product} = Astro.props;
 ---
 
-<article class="mr-20 p-3">
+<div class="card card-side bg-base-100 shadow-xl">
+  <figure>
+    <img
+      src="https://picsum.photos/200/300?grayscale"
+      alt="image" />
+  </figure>
+  <div class="card-body">
+    <h2 class="card-title">{product.name}</h2>
+    <p>{product.describtion}</p>
+    <div class="card-actions justify-end">
+      <button class="btn btn-primary">BUY: {product.prize}</button>
+    </div>
+  </div>
+</div>
+
+<!-- <article class="mr-20 p-3">
     <h3>{product.name}</h3>
-</article>
+</article> -->
