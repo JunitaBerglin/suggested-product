@@ -1,0 +1,16 @@
+---
+interface Props {
+    product: {
+        name: string;
+        describtion: string;
+        prize: string;
+        id: string;
+        imageSrc: string;
+    }
+}
+const {product} = Astro.props;
+---
+
+<article class="mr-20 p-3">
+    <h3>{product.name}</h3>
+</article>

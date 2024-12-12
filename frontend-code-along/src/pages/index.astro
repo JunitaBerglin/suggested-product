@@ -1,20 +1,12 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import { getCollection } from 'astro:content';
 
-const productData = await getCollection('products')
-const products = productData.map(item => item.data)
+import ProductGallery from '../components/product-gallery.astro';
 ---
 
 <Layout>
   <main>
-    <h1>Hello World</h1>
-    <table>
-    {products.map(product => <p>{product.name}</p>)}
-    {products.map(product => <p>{product.describtion}</p>)}
-    {products.map(product => <p>{product.imageSrc}</p>)}
-    {products.map(product => <p>{product.prize}</p>)}
-    </table>
+    <ProductGallery title='this is a gallery'/>
   </main>
 </Layout>
 
