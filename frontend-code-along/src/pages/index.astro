@@ -1,14 +1,16 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import { getEntry } from 'astro:content';
+import { getCollection } from 'astro:content';
 
-const trialData = await getEntry('products', 'trial')
+const productData = await getCollection('products')
+const products = productData.map(item => item.data)
 ---
 
 <Layout>
   <main>
     <h1>Hello World</h1>
-    <p>{trialData?.data.name}</p>
+    {products.map(product => <p>{product.name}</p>)}
   </main>
 </Layout>
 

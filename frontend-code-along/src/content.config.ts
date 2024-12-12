@@ -8,6 +8,10 @@ const products = defineCollection({
   loader: glob({ pattern: "**/*.json", base: "./src/data" }),
   schema: z.object({
     name: z.string(),
+    describtion: z.string(),
+    prize: z.string(),
+    id: z.string().uuid(),
+    imageSrc: z.string().url(),
   }),
 });
 // 4. Export a single `collections` object to register your collection(s)

@@ -1,4 +1,7 @@
 {
-    "name": "Konrad",
-    "maja": "hello"
+    "name": "Macka",
+    "describtion": "En frasig smörgås med ost och skinka.",
+    "prize": "49 SEK",
+    "id": "b8bfa2c4-3d51-44d1-991b-4c1f21a9a821",
+    "imageSrc": "https://via.placeholder.com/150"
 }
