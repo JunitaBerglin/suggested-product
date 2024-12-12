@@ -1,20 +1,22 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
+import { getEntry } from 'astro:content';
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+const trialData = await getEntry('products', 'trial')
 ---
 
 <Layout>
-	<h2 class="hello-world">Hello World! </h2>
-	<Welcome />
-	<button class="button btn-success">Success!</button>
+  <main>
+    <h1>Hello World</h1>
+    <p>{trialData?.data.name}</p>
+  </main>
 </Layout>
 
 <script>
-const title = document.querySelector<HTMLHeadingElement>(".hello-world")!;
-fetch("http://localhost:5191/api/v1/Hello")
-.then(result => result.text())
-.then(text => title.textContent = text)
+  fetch("http://localhost:5015/api/v1/Hello")
+    .then(result => result.text())
+    .then(text => console.log(
+      `%c ${text}`, "color:green;",
+      "Looks like the backend is available"))
+    .catch(() => console.error("Backend is either down or unavailable"))
 </script>
